@@ -1,24 +1,21 @@
 class Array:
     def __init__(self, size):
-        self.data = [0] * size
+        self._data = [0] * size
 
     def __getitem__(self, key):
-        if key < 0 or key >= len(self.data):
+        if key < 0 or key >= len(self._data):
             raise IndexError("Out of range")
         else:
-            return self.data[key]
+            return self._data[key]
 
     def __setitem__(self, key, value):
-        if key < 0 or key >= len(self.data):
+        if key < 0 or key >= len(self._data):
             raise IndexError("Out of range")
         else:
-            self.data[key] = value
+            self._data[key] = value
     
     def __str__(self):
-        return str(self.data)
+        return str(self._data)
 
-arr = Array(5)
-print(arr)
-arr[5]= 3
-
-print(arr)
+    def __len__(self):
+        return len(self._data)

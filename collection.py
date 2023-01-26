@@ -1,24 +1,24 @@
 class Collection:
     def __init__(self):
-        self.data = []
-        self.pointer = 0
+        self._data = []
+        self._pointer = 0
 
     def isEmpty(self):
-        return len(self.data) == 0
+        return len(self._data) == 0
 
     def addItem(self, value):
-        self.data.append(value)
+        self._data.append(value)
 
     def resetNext(self):
-        self.pointer = 0
+        self._pointer = 0
 
     def hasNext(self):
-        return self.pointer < len(self.data)
+        return self._pointer < len(self._data)
 
     def getNext(self):
-        self.pointer += 1
-        return self.data[self.pointer-1]
+        self._pointer += 1
+        return self._data[self._pointer-1]
 
     def __str__(self):
-        return str(self.data)
+        return str(self._data)
 
