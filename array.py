@@ -19,3 +19,5 @@ class Array:
 
     def __len__(self):
         return len(self._data)
+
+arr = Array(10)
